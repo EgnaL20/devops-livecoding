@@ -1,0 +1,10 @@
+---
+# tasks file for roles/proxy
+- name: launch proxy
+  docker_container:
+    name: httpd
+    image: alange20/tp-devops-http-server:latest
+    networks:
+      - name: app_network
+    ports:
+      - "80:80"
